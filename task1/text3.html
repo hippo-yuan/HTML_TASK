@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>任务3</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		body {
+		  font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+		}
+		@font-face {
+		  	font-family: caelum;
+		  	src: url("./fonts/icomoon.eot");
+		  	src: url("./fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+		         url("./fonts/icomoon.woff") format("woff"),
+		         url("./fonts/icomoon.ttf") format("truetype"),
+		         url("./fonts/icomoon.svg") format("svg");
+		}
+		.title {
+			background-color: #1b557a;
+			height: 120px;
+			width: 100%;
+		}
+		.title1 {
+			height: 92px;
+			width: 960px;
+			padding:28px 10px 0px;
+			margin: 0 auto;
+		}
+		#logo {
+			float: left;
+			height:75px; 
+			width: 259px;
+			overflow: hidden;
+			background: url("logo.gif");
+		}
+		#logo>a {
+			width: 259px;
+			display: inline-block;
+			background: url("logo.gif");
+		}
+		ul {
+			list-style: none;
+		}
+		nav {
+			float: right;
+			padding: 23px 11px 0 0;
+		}
+		nav>ul>li {
+			float: left;
+			font-size: 14px;
+			font-weight: bold;
+			padding-left: 27px;
+			color: #fff;
+			list-style:none;
+		}
+		nav>ul>li>a {
+			text-decoration: none;
+			color: #fff;
+		}
+		nav>ul>li>a:hover {
+			color: #81cfff;
+		}
+		.slider {
+			width: 100%;
+			overflow: hidden;
+		}
+		.slider-bg {
+			background-image: url("slider-bg.jpg");
+			height: 371px;
+
+		}
+		.sliderpedple {
+			background-image: url("slide-1.jpg");
+			height: 371px;
+			width: 960px;
+			margin: 0 auto;
+		}
+		.slidertext {
+			padding: 54px 310px 0 120px;
+			width: 450px;
+			
+		}
+		.slidertext h1 {
+			font-size: 35px;
+			line-height: 40px;
+			text-align: right;
+			color: #fff;
+		}
+		.slidertext p {
+			padding:8px 0 10px 33px;
+			font-size: 13px;
+			text-shadow:#333 1px 1px 0;
+			text-align: right;
+			color: #8c8c8c;
+		}
+		.btn{
+			background-color: #db1616;
+			color: #fff;
+			line-height: 17px;
+			padding: 1px 5px;
+			font-size: 10px;
+			float: right;
+			text-decoration: none;
+		}
+		.container {
+			background: url(main.gif) center top;
+		}
+		.main {
+			width: 940px;
+            margin: 0 auto;
+		}
+		.welcome {
+			padding: 15px 0 15px 2px;
+		}
+		.welcome h3 {
+			font-size: 20px;
+    		line-height: 22px;
+    		color: #121212;
+    		font-weight: bold;
+		}
+		.welcome p {
+			text-indent: 24px;
+    		font-size: 12px;
+    		padding: 7px 2px 6px 2px;
+		}
+		.btn-primary {
+			background-color: #1c5275;
+			color: #fff;
+			line-height: 17px;
+			padding: 1px 5px;
+			font-size: 10px;
+			text-decoration: none;
+		}
+		.eye {
+			background-color: #000;
+			color: #fff;
+			background: #000 url(h2-eye.gif) left center no-repeat;
+    		margin: 0 -34px;
+
+		}
+		.eye span {
+			margin-left: 37px;
+		}
+		section>h2>a {
+			text-decoration: none;
+			color: #fff;
+			float: right;
+			background: url(h2-seeall.gif) right center no-repeat;
+			padding-right: 43px;
+		}
+		section>div>ul>li {
+			width: 292px;
+			float: left;
+			padding: 2px 10px;
+		}
+		.hidden {
+			height: 103px;
+			overflow: hidden;
+		}
+		.clearfix:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.dark:hover {
+			color: #000;
+		}
+		.blog {
+			margin-top: 20px;
+		}
+		.blogIcon {
+			color: #fff;
+			background: #000 url(h2-bubble.gif) left center no-repeat;
+    		padding-left: 40px;
+    		margin-left: -34px;
+		}
+		.blog-left {
+			float: left;
+    		width: 628px;
+		}
+		section>div>h2>a {
+			text-decoration: none;
+			color: #fff;
+			float: right;
+			font-size: 15px;
+    		padding: 6px;
+		}
+		section>div>ul>li>h4>a {
+			text-decoration: none;
+			color: #2F89C3;	
+		}
+		.blog-img {
+			float: left;
+		}
+		.blog-date {
+			float: right;
+			padding: 
+		}
+		.blog-date p {
+			font-size: 12px;
+    		padding-bottom: 20px;
+    		width: 449px;
+    		padding: 5px;
+		}
+		.blog-left li h3 {
+			font-size: 20px;
+    		color: #121212;
+		}
+		.blog-post li {
+			border-bottom: 1px dotted #999999;
+    		padding-bottom: 16px;
+    		margin-bottom: 11px;
+		}
+		.blog-btn a:nth-of-type(2){
+			margin-left: 10px;
+		}
+		
+		.blog-blue-btn {
+			float: left;
+			padding-top: 17px;
+		}
+		.blog-right {
+			float: right;
+			width: 302px;
+		}
+		.blog-other {
+			background: #000;
+    		height: 31px;
+    		line-height: 33px;
+    		color: #fff;
+    		font-weight: normal;
+    		margin-bottom: 18px;
+    		padding-left: 10px;
+    		font-size: 19px;
+		}
+		.wheels {
+			background-repeat: no-repeat;
+    		line-height: 33px;
+    		padding-left: 35px;
+    		margin-bottom: 5px;
+		}
+		.wh-chilun {
+	 		background-image: url(h3-wheels.gif);
+	 	}
+	 	.wh-clock {
+	 		background-image: url(h3-clock.gif);
+	 	}
+	 	.wh-cup {
+	 		background-image: url(h3-cup.gif);
+	 	}
+	 	.wh-sync {
+	 		background-image: url(h3-sync.gif);
+	 	}
+	 	.importent {
+	 		text-decoration: none;
+	 		color: #2F89C4;
+	 	}
+	 	.blog-right ul li p 
+	 	{
+	 		font-size: 10px;
+	 		width: 299px;
+	 	}
+	 	footer {
+	 		background: url(footer-top.gif) center top repeat-x;
+	 		height: 291px;
+	 		padding-top: 24px;
+	 		color: #fff
+	 	}
+	 	footer p {
+	 		color: #2F83B7;
+	 	}
+	 	.twitter {
+	 		float: left;
+	 		width: 465px;
+	 	}
+	 	.twitter h2 {
+	 		color: #fff;
+	 		background: url(twitter.gif) left center no-repeat;
+	 		padding-left: 30px;
+    		font-weight: normal;
+
+	 	}
+	 	.btn-notfollow {
+	 		font-size: 10px;
+	 		background-color: #2F83B7;
+	 		color: #fff;
+	 		text-decoration: none;
+	 		float: right;
+	 		padding: 1px 5px
+	 	}
+	 	.fr {
+	 		float: right;
+	 		width: 430px;
+	 	}
+	 	.fr h2 {
+	 		color: #fff;
+	 		background: url(flickr.gif) left center no-repeat;
+	 		padding-left: 30px;
+    		font-weight: normal;
+	 	}
+	 	.fr ul li {
+	 		float: right;
+	 		padding: 5px;
+	 	}
+	 	.pageInfo {
+			background-color: #0E2E41;
+			text-align: center;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="title">
+		<div class="title1">
+			<h1 id="logo">
+				
+			</h1>
+			<nav>
+				<ul>
+					<li><a href="">主页</a></li>
+					<li><a href="">关于</a></li>
+					<li><a href="">服务</a></li>
+					<li><a href="">项目</a></li>
+					<li><a href="">博客</a></li>
+					<li><a href="">模板</a></li>
+					<li><a href="">链接</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<section class="slider">
+		<div class="slider-bg">
+			<div class="sliderpedple">
+			<div class="slidertext">
+				<h1>设计是什么我也不知道</h1>
+				<p>“这里说什么你不知道我知道哈哈哈”</p>
+				<a href="" class="btn">查看这个项目></a>
+			</div>
+			</div>
+		</div>
+	</section>
+	<article class="container">
+		<section class="main">
+			<div class="welcome">
+				<h3>欢迎欣赏这个网站</h3>
+				<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。但人无完人，因此要想诞生一款完美的组件，需要上下游很多优秀的同事，把自己最棒的世界融入进去，协作完成，其中下面这4个职位参与度较高注意到了没有，前端开发人员处于web组件开发流程的下游；这其实没什么，大家通力协作，组件弄好，项目做好，产品做好，皆大欢喜。然而实际上，由于大学没有前端专业，因此负责团队web组件开发的，大多是从与组件几乎不相干的后台开发转过来的，或带有明显的后台开发烙印的。也就是说，前端开发不仅处于下游，还有1/3的身子在web组件之外</p>
+				<a href="" class="btn-primary">阅读更多></a>
+			</div>
+		</section>
+		<section class="main">
+			<h2 class="eye">
+				<span>最近的项目</span>
+				<a href="">查看全部</a>
+			</h2>
+			<div class="main">
+				<ul class="container clearfix">
+					<li>
+						<div class="dark">
+							<a href="">
+								<img src="latest-projects-1.jpg" alt="" class="dark">
+							</a>
+						</div>
+						<div>
+							<h3>第一个项目测试</h3>
+							<p class="hidden">目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。但人无完人，因此要想诞生一款完美的组件，需要上下游很多优秀的同事，把自己最棒的世界融入进去，协作完成，其中下面这4个职位参与度较高注意到了没有</p>
+							<a href="" class="btn-primary">查看全部></a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="">
+								<img src="latest-projects-2.jpg" alt="">
+							</a>
+						</div>
+						<div>
+							<h3>第二个项目测试</h3>
+							<p class="hidden">目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。但人无完人，因此要想诞生一款完美的组件，需要上下游很多优秀的同事，把自己最棒的世界融入进去，协作完成，其中下面这4个职位参与度较高注意到了没有</p>
+							<a href="" class="btn-primary">查看全部></a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="">
+								<img src="latest-projects-3.jpg" alt="">
+							</a>
+						</div>
+						<div>
+							<h3>第二个项目测试</h3>
+							<p class="hidden">目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。但人无完人，因此要想诞生一款完美的组件，需要上下游很多优秀的同事，把自己最棒的世界融入进去，协作完成，其中下面这4个职位参与度较高注意到了没有</p>
+							<a href="" class="btn-primary">查看全部></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="main blog clearfix">
+			<div class="blog-left">
+				<h2 class="blogIcon">
+					<span>来自我的博客</span>
+					<a href="">最近的文章</a>
+				</h2>
+				<ul class="blog-post blog-btn">
+					<li class="clearfix blog-left">
+						<h3>第一篇文章</h3>
+						<h4>文章写于 2015 11.19 by <a href="">hippo_yuan</a></h4>
+						<div class="blog-img">
+							<img src="blog-post-1.jpg" alt="">
+						</div>
+						<div class="blog-date">
+							<p>
+								目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。
+							</p>
+							<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。
+						</div>
+						<div class="blog-blue-btn">
+							<a href="" class="btn-primary">阅读更多 > </a>
+							<a href="" class="btn-primary">查看评论 > </a>
+						</div>
+					</li>
+					<li class="clearfix blog-left">
+						<h3>第一篇文章</h3>
+						<h4>文章写于 2015 11.19 by <a href="">hippo_yuan</a></h4>
+						<div class="blog-img">
+							<img src="blog-post-2.jpg" alt="">
+						</div>
+						<div class="blog-date">
+							<p>
+								目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。
+							</p>
+							<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。
+						</div>
+						<div class="blog-blue-btn">
+							<a href="" class="btn-primary">阅读更多 > </a>
+							<a href="" class="btn-primary">查看评论 > </a>
+						</div>
+					</li>
+					<li class="clearfix blog-left">
+						<h3>第一篇文章</h3>
+						<h4>文章写于 2015 11.19 by <a href="">hippo_yuan</a></h4>
+						<div class="blog-img">
+							<img src="blog-post-3.jpg" alt="">
+						</div>
+						<div class="blog-date">
+							<p>
+								目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。
+							</p>
+							<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。
+						</div>
+						<div class="blog-blue-btn">
+							<a href="" class="btn-primary">阅读更多 > </a>
+							<a href="" class="btn-primary">查看评论 > </a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="blog-right">
+				<h3 class="blog-other">其他介绍</h3>
+				<ul>
+					<li>
+						<h3 class="wheels wh-chilun">第一个其他项目</h3>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。<a href="" class="importent">至关重要的角色</a></p>
+					</li>
+					<li>
+						<h3 class="wheels wh-clock">第一个其他项目</h3>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。<a href="" class="importent">至关重要的角色</a></p>
+					</li>
+					<li>
+						<h3 class="wheels wh-cup">第一个其他项目</h3>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。<a href="" class="importent">至关重要的角色</a></p>
+					</li>
+					<li>
+						<h3 class="wheels wh-sync">第一个其他项目</h3>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。人的技能背景，个人喜好，甚至世界观都可以从组件中得到体现。<a href="" class="importent">至关重要的角色</a></p>
+					</li>
+				</ul>
+			</div>	
+		</section>
+	</article>
+	<footer>
+		<div class="main clearfix">
+			<div class="twitter">
+				<h2>
+				Twitter用户留言
+				<a href="" class="btn-notfollow">别跟我们联系</a>
+				</h2>
+				<ul>
+					<li>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命时候就扮演了至关重要的角色。</p>
+						<h5>2015 03-31</h5>
+					</li>
+					<li>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。</p>
+						<h5>2015 03-31</h5>
+					</li>
+					<li>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。</p>
+						<h5>2015 03-31</h5>
+					</li>
+					<li>
+						<p>目前这个阶段，我们所使用的web组件都是人所编写的，因此，人这个个体在赋予组件生命的时候就扮演了至关重要的角色。</p>
+						<h5>2015 03-31</h5>
+					</li>
+				</ul>
+			</div>
+			<div class="fr">
+				<h2>
+					项目还在继续增加
+					<a href="" class="btn-notfollow">别联系我们</a>
+				</h2>
+				<ul>
+					<li><a><img src="flickr-thumb-1.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-2.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-3.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-4.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-5.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-6.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-7.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-8.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-3.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-4.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-5.jpg" alt=""></a></li>
+					<li><a><img src="flickr-thumb-6.jpg" alt=""></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pageInfo">
+			<p>© PIXELTHIS WWW.SIPC115.COM.TEMPLATE DESIGNED BY YUANYIBO - More Project SIPC</p>
+		</div>
+	</footer>
+</body>
+</html>
